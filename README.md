@@ -373,17 +373,17 @@ loading the learned weights.
 
 ## Technologies
 
-- Python 3
-- NumPy
-- SciPy
-- Matplotlib
-- Seaborn
-- Scikit-learn
-- PyTorch
-- Torchvision
-- PyCBC
-- LALSuite
-- Jupyter Notebook
+- **Python 3**
+- **NumPy**
+- **SciPy**
+- **Matplotlib**
+- **Seaborn**
+- **Scikit-learn**
+- **PyTorch**
+- **Torchvision**
+- **PyCBC**
+- **LALSuite**
+- **Jupyter Notebook**
 
 ## Author
 **Mathias Rendón Fernández**
