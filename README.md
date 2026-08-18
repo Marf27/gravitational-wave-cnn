@@ -360,4 +360,5 @@ loading the learned weights.
 
 ## Author
 **Mathias Rendón Fernández**
+
 Physics student — Universidad Autónoma de Madrid
