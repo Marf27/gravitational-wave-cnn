@@ -243,33 +243,60 @@ The main physical and machine-learning parameters are defined in a single
 configuration dictionary:
 ```text
 PARAMS = {
-    "delta_t": 1.0 / 2048,
-    "window_min": 1.0,
-    "window_max": 2.0,
+    # ── Time / sampling parameters ───────────────────────────
+    "delta_t"       : 1.0 / 2048,   # Time step [s] (fs = 2048 Hz)
+    "window_min"    : 1.0,           # Minimum window duration [s]
+    "window_max"    : 2.0,           # Maximum window duration [s]
 
-    "sigma_min": 1e-23,
-    "sigma_max": 1e-21,
-    "glitch_prob": 0.50,
+    # ── Detector noise ───────────────────────────────────────
+    "sigma_min"     : 1e-23,         # Minimum Gaussian noise amplitude
+    "sigma_max"     : 1e-21,         # Maximum Gaussian noise amplitude
+    "glitch_prob"   : 0.50,          # Probability of adding a glitch to noise
 
-    "snr_min": 5.0,
-    "snr_max": 20.0,
+    # ── Gravitational-wave signal ────────────────────────────
+    "snr_min"       : 5.0,           # Minimum injected SNR
+    "snr_max"       : 20.0,          # Maximum injected SNR
+    "d_min"         : 100.0,         # Minimum distance [Mpc]
+    "d_max"         : 1000.0,        # Maximum distance [Mpc]
+    "f_lower_min"   : 40.0,          # Minimum low-frequency cutoff [Hz]
+    "f_lower_max"   : 60.0,          # Maximum low-frequency cutoff [Hz]
 
-    "d_min": 100.0,
-    "d_max": 1000.0,
+    # ── Masses (system-dependent ranges) ─────────────────────
+    "m_ns_min"      : 1.2,           # Minimum neutron star mass [M☉]
+    "m_ns_max"      : 2.0,           # Maximum neutron star mass [M☉]
+    "m_bh_min"      : 10.0,          # Minimum black hole mass [M☉]
+    "m_bh_max"      : 50.0,          # Maximum black hole mass [M☉]
+    "m_nsbh_bh_min" : 8.0,           # Minimum BH mass in NSBH systems [M☉]
+    "m_nsbh_bh_max" : 30.0,          # Maximum BH mass in NSBH systems [M☉]
 
-    "f_lower_min": 40.0,
-    "f_lower_max": 60.0,
+    # ── Spin ────────────────────────────────────────────────
+    "spin_min"      : -0.8,          # Aligned spin z-component minimum (dimensionless)
+    "spin_max"      :  0.8,          # Aligned spin z-component maximum (dimensionless)
+    "use_spin"      : True,          # Enable/disable spin parameters
 
-    "n_samples": 10000,
-    "test_size": 0.15,
-    "val_size": 0.15,
+    # ── Glitches ─────────────────────────────────────────────
+    "glitch_f_min"  : 30.0,          # Minimum glitch frequency [Hz]
+    "glitch_f_max"  : 300.0,         # Maximum glitch frequency [Hz]
+    "glitch_Q_min"  : 3.0,           # Minimum Q-factor (sine-Gaussian)
+    "glitch_Q_max"  : 20.0,          # Maximum Q-factor (sine-Gaussian)
+    "glitch_snr_min": 5.0,           # Minimum injected glitch SNR
+    "glitch_snr_max": 20.0,          # Maximum injected glitch SNR
 
-    "batch_size": 64,
-    "lr": 5e-5,
-    "patience": 10,
+    # ── Spectrogram ─────────────────────────────────────────
+    "nperseg"       : 64,            # Samples per STFT segment
+    "noverlap"      : 32,            # Overlap between segments
 
-    "dropout1": 0.50,
-    "dropout2": 0.30,
+    # ── Dataset ─────────────────────────────────────────────
+    "n_samples"     : 10000,           # Training + validation + test samples
+    "test_size"     : 0.15,          # Test split fraction
+    "val_size"      : 0.15,          # Validation split fraction (of total)
+
+    # ── Training ────────────────────────────────────────────
+    "batch_size"    : 64,
+    "lr"            : 5e-5,
+    "patience"      : 10,            # Early stopping patience
+    "dropout1"      : 0.50,          # Dropout first FC layer
+    "dropout2"      : 0.30,          # Dropout second FC layer
 }
 ```
 This makes it possible to modify the physical simulation and machine-learning
