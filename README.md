@@ -30,28 +30,21 @@ generation of physical gravitational-wave waveforms when available.
 
 ## 📊 Results
 
+These results were obtained with n_samples = 10000.
+
+Additional figures are included in the main code.
+
 ### Learning Curves
 
-![Learning Curves](figures /learning_curves.png)
+![Learning Curves](learningcurves.png)
 
-![Learning Curves](CUAM/GitHub/Proyectos_Python/learningcurves.png)
+### ROC Curve and Confusion Matrix
 
-
-### ROC Curve
-
-![ROC Curve](figures/roc_curve.png)
-
-### Confusion Matrix
-
-![Confusion Matrix](figures/confusion_matrix.png)
+![ROC Curve & Confusion Matrix](roc_confusion.png)
 
 ### Accuracy vs SNR
 
-![Accuracy vs SNR](figures/accuracy_vs_snr.png)
-
-### Generalization
-
-![Generalization](figures/generalization.png)
+![Accuracy vs SNR](acc_vs_snr.png)
 
 ## 🔬 Matched Filtering
 
