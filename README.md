@@ -32,7 +32,10 @@ generation of physical gravitational-wave waveforms when available.
 
 ### Learning Curves
 
-![Learning Curves](figures/learning_curves.png)
+![Learning Curves](figures /learning_curves.png)
+
+![Learning Curves](CUAM/GitHub/Proyectos_Python/learningcurves.png)
+
 
 ### ROC Curve
 
