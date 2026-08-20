@@ -232,6 +232,7 @@ The comparison considers two complementary regimes:
 the injected waveform.
 - **More realistic conditions**, involving non-ideal noise, glitches, and
 waveform variability.
+
 The comparison is not intended as a perfectly controlled benchmark because
 the two approaches rely on different assumptions.
 Matched filtering is theoretically optimal when the signal template and
